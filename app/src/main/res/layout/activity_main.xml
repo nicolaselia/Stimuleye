@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:id="@+id/sign_in_screen">
+
+        <View
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/header_bg" />
+
+        <ImageView
+            android:id="@+id/eye"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/eye"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/welcome_back_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back"
+            android:textColor="#FFFF"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eye" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to your account to continue"
+            android:textColor="#E7E7E7"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome_back_text" />
+
+        <TextView
+            android:id="@+id/sign_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="@dimen/left_margin"
+            android:text="Sign in"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/left_margin"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Username"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:paddingStart="14dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_text" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/left_margin"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:paddingStart="14dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/left_margin"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/sign_in_button"
+            android:padding="10dp"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            android:onClick="signIn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="I forgot my password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+
+        <TextView
+            android:id="@+id/new_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New user?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sign_up"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Sign up"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/new_user"
+            android:layout_marginBottom="10dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetectEyes"
+        android:visibility="gone"
+        android:id="@+id/tilt_phone">
+
+        <RelativeLayout
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <ImageView
+                android:id="@+id/rotate_phone"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/phone"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Rotate phone to get started"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:layout_below="@id/rotate_phone"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

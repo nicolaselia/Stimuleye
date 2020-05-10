@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/java_cam_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/eye"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="50dp"
+        />
+
+    <TextView
+        android:id="@+id/text_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/blue_rectangle"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginHorizontal="64dp"
+        android:text="Eye not detected"
+        android:textColor="#fff"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_prompt"
+        android:layout_alignEnd="@+id/java_cam_view"
+        android:layout_marginEnd="35dp"
+        android:textColor="#fff"
+        android:textSize="100sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/pass_or_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        opencv:layout_constraintBottom_toTopOf="parent"
+        opencv:layout_constraintEnd_toStartOf="parent"
+        opencv:layout_constraintStart_toStartOf="parent"
+        opencv:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pass" />
+
+        <Button
+            android:id="@+id/fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fail" />
+
+    </LinearLayout>
+
+</RelativeLayout>
