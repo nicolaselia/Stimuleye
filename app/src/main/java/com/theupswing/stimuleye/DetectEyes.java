@@ -91,11 +91,12 @@ public class DetectEyes extends AppCompatActivity implements CameraBridgeViewBas
         final TextView textPrompt = findViewById(R.id.text_prompt);
         final ImageView eyeImage = findViewById(R.id.eye);
 
+        /*
         int x = 30;
         int y = 200;
         int side = 500;
         Imgproc.rectangle(mRgba, new Point(x, y), new Point(x + side, y + side), new Scalar(255, 0, 0), 10);
-
+        */
 
         runOnUiThread(new Runnable() {
         @Override

@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            //Intent intent = new Intent(MainActivity.this, DetectEyes.class);
-            Intent intent = new Intent(MainActivity.this, PupilDilationTest.class);
+            Intent intent = new Intent(MainActivity.this, DetectEyes.class);
+            //Intent intent = new Intent(MainActivity.this, PupilDilationTest.class);
             startActivity(intent);
         }
     }
